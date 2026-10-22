@@ -1,0 +1,18 @@
+{
+  "name": "@zimo/skill-zimo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@zimo/domain": "workspace:*",
+    "fflate": "0.8.3",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.1"
+  }
+}

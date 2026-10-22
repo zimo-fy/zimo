@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "kind": "instruction",
+  "packageId": "zimo.deepseek-search-fetch",
+  "name": "DeepSeek 联网 Search/Fetch",
+  "version": "1.0.0",
+  "description": "指导在 DeepSeek 网关下用 web_search 与 web_fetch 完成检索与网页读取，并说明官方 Search/Fetch API 边界。",
+  "category": "联网",
+  "permissions": ["context:user-input", "context:conversation"],
+  "entry": "SKILL.md"
+}

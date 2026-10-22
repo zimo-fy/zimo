@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zimo 修改问题"
+  short_description: "定位并修复缺陷，复杂问题同步记录并更新受影响的具体流程文档"
+  default_prompt: "Use $zimo-fix-issue to diagnose and fix this Zimo issue, including required regression tests and documentation updates."
+policy:
+  allow_implicit_invocation: false

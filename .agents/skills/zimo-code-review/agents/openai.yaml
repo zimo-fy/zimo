@@ -1,0 +1,6 @@
+interface:
+  display_name: "Zimo 代码审查"
+  short_description: "按项目规范审查变更，输出有证据、可定位、分优先级的问题"
+  default_prompt: "Use $zimo-code-review to review the requested Zimo code changes without modifying the working tree."
+policy:
+  allow_implicit_invocation: false

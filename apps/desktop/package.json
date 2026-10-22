@@ -1,0 +1,165 @@
+{
+  "name": "@zimo/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zimo AI Agent desktop application",
+  "author": "Zimo Team",
+  "type": "module",
+  "main": "./out/main/index.cjs",
+  "build": {
+    "appId": "com.zimo.desktop",
+    "productName": "Zimo",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/onnxruntime-node/**/*",
+      "node_modules/sharp/**/*",
+      "node_modules/@img/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "files": [
+      "out/**/*",
+      "package.json",
+      "!node_modules/onnxruntime-web{,/**/*}",
+      "!resources/skills{,/**/*}"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/models",
+        "to": "models"
+      },
+      {
+        "from": "resources/icon.png",
+        "to": "icon.png"
+      },
+      {
+        "from": "resources/agents",
+        "to": "agents"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "resources/icon.png",
+      "identity": null,
+      "files": [
+        "out/**/*",
+        "package.json",
+        "!node_modules/onnxruntime-web{,/**/*}",
+        "!resources/skills{,/**/*}",
+        "!node_modules/onnxruntime-node/bin/napi-v3/linux{,/**/*}",
+        "!node_modules/onnxruntime-node/bin/napi-v3/win32{,/**/*}",
+        "!node_modules/@img/sharp-win32-*{,/**/*}",
+        "!node_modules/@img/sharp-linux-*{,/**/*}",
+        "!node_modules/@img/sharp-linuxmusl-*{,/**/*}",
+        "!node_modules/@img/sharp-libvips-linux-*{,/**/*}",
+        "!node_modules/@img/sharp-libvips-linuxmusl-*{,/**/*}",
+        "!node_modules/@img/sharp-wasm32{,/**/*}"
+      ],
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "dmg": {
+      "title": "Zimo ${version}"
+    },
+    "win": {
+      "icon": "resources/icon.png",
+      "files": [
+        "out/**/*",
+        "package.json",
+        "!node_modules/onnxruntime-web{,/**/*}",
+        "!resources/skills{,/**/*}",
+        "!node_modules/onnxruntime-node/bin/napi-v3/darwin{,/**/*}",
+        "!node_modules/onnxruntime-node/bin/napi-v3/linux{,/**/*}",
+        "!node_modules/onnxruntime-node/bin/napi-v3/win32/arm64{,/**/*}",
+        "!node_modules/@img/sharp-darwin-{x64,arm64}{,/**/*}",
+        "!node_modules/@img/sharp-libvips-darwin-{x64,arm64}{,/**/*}",
+        "!node_modules/@img/sharp-linux-*{,/**/*}",
+        "!node_modules/@img/sharp-linuxmusl-*{,/**/*}",
+        "!node_modules/@img/sharp-libvips-linux-*{,/**/*}",
+        "!node_modules/@img/sharp-libvips-linuxmusl-*{,/**/*}",
+        "!node_modules/@img/sharp-wasm32{,/**/*}",
+        "!node_modules/@img/sharp-win32-arm64{,/**/*}",
+        "!node_modules/@img/sharp-win32-ia32{,/**/*}"
+      ],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "include": "resources/windows/installer.nsh",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "scripts": {
+    "predev": "node ../../scripts/ensure-electron-installed.mjs",
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "package:dir": "node ../../scripts/package-desktop-bytecode.mjs dir",
+    "package:mac": "node ../../scripts/assert-bytecode-build-host.mjs darwin && node ../../scripts/package-desktop-bytecode.mjs mac",
+    "package:win": "node ../../scripts/assert-bytecode-build-host.mjs win32 x64 && node ../../scripts/prepare-windows-prerequisites.mjs && node ../../scripts/package-desktop-bytecode.mjs win",
+    "package:verify:bytecode": "node ../../scripts/verify-desktop-bytecode.mjs",
+    "preview": "electron-vite preview"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@mozilla/readability": "0.6.0",
+    "bytenode": "1.6.0",
+    "linkedom": "0.18.12",
+    "officeparser": "7.8.0",
+    "onnxruntime-common": "1.21.0",
+    "onnxruntime-node": "1.21.0",
+    "qrcode": "1.5.4",
+    "sharp": "0.34.5"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "@radix-ui/react-avatar": "1.2.6",
+    "@radix-ui/react-dropdown-menu": "2.1.24",
+    "@radix-ui/react-tooltip": "1.2.16",
+    "@types/qrcode": "1.5.6",
+    "@xyflow/react": "12.10.0",
+    "@zimo/agent-zimo": "workspace:*",
+    "@zimo/application": "workspace:*",
+    "@zimo/auth-zimo": "workspace:*",
+    "@zimo/browser-cdp": "workspace:*",
+    "@zimo/contracts": "workspace:*",
+    "@zimo/database-sqlite": "workspace:*",
+    "@zimo/domain": "workspace:*",
+    "@zimo/knowledge-catalog-zimo": "workspace:*",
+    "@zimo/knowledge-local": "workspace:*",
+    "@zimo/logging": "workspace:*",
+    "@zimo/model-catalog-zimo": "workspace:*",
+    "@zimo/model-langchain": "workspace:*",
+    "@zimo/repositories-mock": "workspace:*",
+    "@zimo/secret-store": "workspace:*",
+    "@zimo/skill-local": "workspace:*",
+    "@zimo/skill-zimo": "workspace:*",
+    "@zimo/ui": "workspace:*",
+    "clsx": "2.1.1",
+    "lucide-react": "1.39.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "tailwind-merge": "3.6.0",
+    "zod": "4.5.4"
+  }
+}

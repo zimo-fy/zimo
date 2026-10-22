@@ -1,0 +1,14 @@
+node_modules
+out
+dist
+coverage
+playwright-report
+test-results
+pnpm-lock.yaml
+*.sqlite*
+todo.md
+# Third-party model artifacts are integrity-checked byte-for-byte.
+apps/desktop/resources/models/**/Xenova/
+apps/desktop/resources/models/**/zimo-model.json
+# Third-party Skill sources are preserved byte-for-byte and excluded from packaging.
+apps/desktop/resources/skills/

@@ -1,0 +1,15 @@
+{
+  "name": "@zimo/model-langchain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@langchain/core": "1.2.9",
+    "@langchain/openai": "1.5.11",
+    "@zimo/domain": "workspace:*"
+  }
+}

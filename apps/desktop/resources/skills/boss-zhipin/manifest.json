@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "kind": "instruction",
+  "packageId": "zimo.boss-zhipin",
+  "name": "Boss直聘 HR 自动化助手",
+  "version": "2.0.4",
+  "description": "由统一招聘调度按需加载的 Boss直聘前台浏览器操作能力。",
+  "category": "招聘平台能力",
+  "permissions": ["context:user-input", "context:conversation"],
+  "entry": "SKILL.md"
+}

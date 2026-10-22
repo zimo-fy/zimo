@@ -1,0 +1,13 @@
+{
+  "name": "@zimo/browser-cdp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@zimo/domain": "workspace:*"
+  }
+}

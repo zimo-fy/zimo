@@ -1,0 +1,21 @@
+{
+  "name": "@zimo/knowledge-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./document-content-adapter": "./src/document-content-adapter.ts",
+    "./document-file-store": "./src/document-file-store.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "@zimo/domain": "workspace:*",
+    "docx": "9.7.1",
+    "exceljs": "4.4.0",
+    "officeparser": "7.8.0",
+    "pdf-lib": "1.17.1",
+    "pptxgenjs": "4.0.1"
+  }
+}

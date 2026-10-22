@@ -1,0 +1,13 @@
+---
+alwaysApply: false
+paths: "**/*.md"
+---
+
+# FBS-BookWriter · 条件上下文（编辑 Markdown 时注入）
+
+技能根目录：**`__FBS_SKILL_ROOT__`**（勿当作可写依赖；规范只读引用）。
+
+1. **流程**：全书阶段以 S0–S6 为准；写作前确认已满足 `search-policy.json` 与 `section-3-workflow.md` §3.0.5 的检索门禁（用 `@` 单文件拉取，勿粘贴全文）。
+2. **质量**：去 AI 味与分层审校见 `references/02-quality/`；仅在需要输出检查单时 `@` `quality-check.md`。
+3. **视觉**：位图须**项目内路径**或 `coverImage`；禁止假设「内置图像」或未文档化的 docx skill。
+4. **交付**：MD + HTML 为主；PDF/DOCX 按 `delivery.md` / `delivery-guide.md` 用户侧工具链。

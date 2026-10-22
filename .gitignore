@@ -1,0 +1,116 @@
+# Dependencies and package-manager caches
+node_modules/
+.pnpm-store/
+.pnp.*
+
+# Environment variables and local overrides
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# Build output and Electron packages
+dist/
+out/
+build/
+release/
+artifacts/
+dist-electron/
+.electron-vite/
+*.asar
+*.blockmap
+*.dmg
+*.pkg
+*.exe
+*.msi
+*.AppImage
+*.snap
+
+# TypeScript, bundler, and task caches
+*.tsbuildinfo
+.tsbuild/
+.vite/
+.turbo/
+.cache/
+.vitest/
+.eslintcache
+.stylelintcache
+
+# Test and coverage output
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Local databases and SQLite runtime files
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Local app state, logs, and crash reports
+.local/
+user-data/
+logs/
+*.log
+*.log.*
+*.dmp
+Crashpad/
+crashDumps/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets and signing credentials
+secrets.json
+*.secrets.json
+.secrets/
+secrets.enc
+*.secret-store
+*.enc.local
+*.key
+*.pem
+*.p12
+*.pfx
+*.mobileprovision
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE and editor-local state
+.idea/
+.fleet/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Operating-system metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini

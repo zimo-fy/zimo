@@ -1,0 +1,24 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/domain" },
+    { "path": "packages/contracts" },
+    { "path": "packages/application" },
+    { "path": "packages/adapters/agent-zimo" },
+    { "path": "packages/adapters/auth-zimo" },
+    { "path": "packages/adapters/browser-cdp" },
+    { "path": "packages/adapters/database-sqlite" },
+    { "path": "packages/adapters/secret-store" },
+    { "path": "packages/adapters/logging" },
+    { "path": "packages/adapters/knowledge-local" },
+    { "path": "packages/adapters/model-catalog-zimo" },
+    { "path": "packages/adapters/model-langchain" },
+    { "path": "packages/adapters/repositories-mock" },
+    { "path": "packages/adapters/skill-local" },
+    { "path": "packages/adapters/skill-zimo" },
+    { "path": "packages/ui" },
+    { "path": "packages/test-kit" },
+    { "path": "apps/desktop" },
+    { "path": "apps/website" }
+  ]
+}

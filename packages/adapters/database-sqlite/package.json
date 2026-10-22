@@ -1,0 +1,20 @@
+{
+  "name": "@zimo/database-sqlite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./workspace-grant-repository": "./src/workspace-grant-repository.ts",
+    "./approval-request-repository": "./src/approval-request-repository.ts",
+    "./security-audit-repository": "./src/security-audit-repository.ts",
+    "./context-compaction-repository": "./src/context-compaction-repository.ts",
+    "./user-memory-repository": "./src/user-memory-repository.ts",
+    "./web-search-configuration-repository": "./src/web-search-configuration-repository.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@zimo/domain": "workspace:*",
+    "drizzle-orm": "1.0.0-rc.4"
+  }
+}

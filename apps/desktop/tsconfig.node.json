@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./.tsbuild/node",
+    "rootDir": "./src",
+    "lib": ["ES2022"],
+    "types": ["node", "electron", "vite/client"]
+  },
+  "include": ["src/main/**/*.ts", "src/preload/**/*.ts"],
+  "references": [
+    { "path": "../../packages/domain" },
+    { "path": "../../packages/contracts" },
+    { "path": "../../packages/application" },
+    { "path": "../../packages/adapters/agent-zimo" },
+    { "path": "../../packages/adapters/auth-zimo" },
+    { "path": "../../packages/adapters/browser-cdp" },
+    { "path": "../../packages/adapters/database-sqlite" },
+    { "path": "../../packages/adapters/secret-store" },
+    { "path": "../../packages/adapters/logging" },
+    { "path": "../../packages/adapters/knowledge-local" },
+    { "path": "../../packages/adapters/model-catalog-zimo" },
+    { "path": "../../packages/adapters/model-langchain" },
+    { "path": "../../packages/adapters/repositories-mock" },
+    { "path": "../../packages/adapters/skill-local" },
+    { "path": "../../packages/adapters/skill-zimo" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "kind": "instruction",
+  "packageId": "zimo.skill-creator",
+  "name": "创建 Skill",
+  "version": "1.1.1",
+  "description": "创建、校验并直接安装本地 Skill",
+  "category": "开发工具",
+  "permissions": ["context:user-input", "skill:local-install"],
+  "entry": "SKILL.md"
+}

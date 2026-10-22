@@ -1,0 +1,12 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "packages/adapters/*"
+
+supportedArchitectures:
+  os:
+    - darwin
+    - win32
+  cpu:
+    - x64
+    - arm64

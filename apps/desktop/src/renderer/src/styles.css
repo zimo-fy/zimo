@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@source "../../../../../packages/ui/src";
+
+@theme {
+  --font-sans:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: #262626;
+  background: #fafafa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+:where(
+    button,
+    a[href],
+    summary,
+    [role="button"],
+    [role="menuitem"],
+    [role="menuitemcheckbox"],
+    [role="menuitemradio"]
+  ):not(:disabled):not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+.field {
+  min-height: 44px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  padding: 9px 14px;
+  color: #262626;
+  line-height: 24px;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+textarea.field {
+  padding-block: 12px;
+  line-height: 1.5;
+}
+
+/* Overlay icons/actions need reserved content space. These modifiers live beside
+   .field so component-level utility ordering cannot accidentally remove it. */
+.field.field-with-leading-icon {
+  padding-inline-start: 42px;
+}
+
+.field.field-with-trailing-action {
+  padding-inline-end: 46px;
+}
+
+.field::placeholder {
+  color: #a3a3a3;
+}
+
+.field:focus {
+  border-color: #737373;
+  box-shadow: 0 0 0 3px rgb(229 229 229 / 70%);
+}
+
+.field:disabled {
+  cursor: not-allowed;
+  background: #fafafa;
+  color: #737373;
+}
+
+.icon-button {
+  @apply grid size-9 place-items-center rounded-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-subtle {
+  scrollbar-color: #d4d4d4 transparent;
+  scrollbar-width: thin;
+}
+
+.scrollbar-subtle::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-subtle::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-subtle::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #d4d4d4;
+}
+
+.markdown > * + * {
+  margin-top: 0.75rem;
+}
+
+.markdown pre {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: #171717;
+  padding: 0.875rem 1rem;
+  color: #f5f5f5;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.markdown :not(pre) > code {
+  border-radius: 0.35rem;
+  background: #f5f5f5;
+  padding: 0.1rem 0.35rem;
+  color: #404040;
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.markdown th,
+.markdown td {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

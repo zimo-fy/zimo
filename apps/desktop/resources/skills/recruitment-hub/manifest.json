@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "kind": "instruction",
+  "packageId": "zimo.recruitment-hub",
+  "name": "招聘平台统一调度",
+  "version": "2.0.2",
+  "description": "招聘操作的统一入口，按需加载 Boss直聘、鱼泡直聘和猎聘能力。",
+  "category": "招聘",
+  "permissions": ["context:user-input", "context:conversation"],
+  "entry": "SKILL.md"
+}
